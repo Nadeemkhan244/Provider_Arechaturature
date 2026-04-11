@@ -8,6 +8,7 @@ import 'package:provider_practice/provider/favorite_provider.dart';
 import 'package:provider_practice/screen/Dark_theme.dart';
 import 'package:provider_practice/screen/example_one.dart';
 import 'package:provider_practice/screen/favorite/favorite_screen.dart';
+import 'package:provider_practice/screen/value_notifier_listner.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
           darkTheme: ThemeData(
             brightness: Brightness.dark,
           ),
-          home:DarkThemeScreen(), // This points to your screen file
+          home:NotifyListenerScreen(), // This points to your screen file
         );
       }
       )
