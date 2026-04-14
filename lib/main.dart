@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_practice/provider/Theme_changer_provider.dart';
+import 'package:provider_practice/provider/auth_provider.dart';
 import 'package:provider_practice/provider/count_provider.dart';
 // Replace 'my_provider_app' with whatever name is on line 1 of your pubspec.yaml
 import 'package:provider_practice/provider/example_one_provider.dart';
@@ -8,6 +9,7 @@ import 'package:provider_practice/provider/favorite_provider.dart';
 import 'package:provider_practice/screen/Dark_theme.dart';
 import 'package:provider_practice/screen/example_one.dart';
 import 'package:provider_practice/screen/favorite/favorite_screen.dart';
+import 'package:provider_practice/screen/login.dart';
 import 'package:provider_practice/screen/value_notifier_listner.dart';
 
 void main() {
@@ -28,6 +30,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => CountProvider()),
         ChangeNotifierProvider(create: (_) => favoriteitemsProvider()),
         ChangeNotifierProvider(create: (_) => ThemeChanger()),
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
       child: Builder(builder: (BuildContext context){
         final themeChanger = Provider.of<ThemeChanger>(context);
@@ -42,7 +45,7 @@ class MyApp extends StatelessWidget {
           darkTheme: ThemeData(
             brightness: Brightness.dark,
           ),
-          home:NotifyListenerScreen(), // This points to your screen file
+          home: LoginPage(), // This points to your screen file
         );
       }
       )
